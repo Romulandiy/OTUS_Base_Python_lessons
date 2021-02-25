@@ -1,4 +1,4 @@
-from pprint import pprint, pformat
+from pprint import pprint
 
 '''
 Task # 1
@@ -12,6 +12,7 @@ def square(n, degree):
     return changed_n
 
 
+print('--------------------Task #1-----------------------------------')
 n = list(map(int, input('Enter integer numbers separated by a space = ').strip().split()))
 keyword = int(input('Enter integer degree = '))
 pprint(square(n, keyword))
@@ -45,8 +46,8 @@ def simple_numbers(num):
 
 def choice_filter_func(int_numbers):
     print()
-    print('-------------------------------------------------------------')
-    print(int_numbers)
+    print('--------------------Task #2-----------------------------------')
+    print('Original list of int numbers:', int_numbers)
     tmp = input('Enter "even" or "odd", or "simple" for start type of filter: ')
     if tmp == 'even':
         print('List after even filter:', list(EVEN_FILTER))
