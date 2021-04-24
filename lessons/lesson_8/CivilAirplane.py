@@ -9,4 +9,4 @@ class CivilAirplane(Airplane):
     passenger_capacity: int = 0  # Вместительность пассажиров
 
     def make_sound(self):
-        pprint("Uuuuuu...!")
+        pprint("Uuuuuu...uuu...!")

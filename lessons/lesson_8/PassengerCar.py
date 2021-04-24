@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 from pprint import pprint
 from lessons.lesson_8.Car import Car
-from lessons.lesson_8.Engine import Engine
 from lessons.lesson_8.MyException import MyException
 
 
@@ -20,8 +19,11 @@ class PassengerCar(Car):
 
     @staticmethod
     def start_motor(fuel_tank, remaining_fuel_in_tank):
-        if remaining_fuel_in_tank / fuel_tank <= 0.04:
-            raise MyException.output(fuel_tank, remaining_fuel_in_tank)
+        try:
+            if remaining_fuel_in_tank / fuel_tank <= 0.04:
+                raise Exception(MyException.output(fuel_tank, remaining_fuel_in_tank))
+        except Exception:
+            print("Raised an exception", "\n")
         else:
             pprint(f"remaining_fuel_in_tank / fuel_tank = {remaining_fuel_in_tank}/{fuel_tank} ="
                    f" {remaining_fuel_in_tank / fuel_tank}")

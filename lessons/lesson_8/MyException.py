@@ -1,7 +1,7 @@
 from pprint import pprint
 
 
-class MyException(Exception):
+class MyException:
 
     @staticmethod
     def output(fuel_tank, remaining_fuel_in_tank):
