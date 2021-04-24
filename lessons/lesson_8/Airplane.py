@@ -1,10 +1,10 @@
 from dataclasses import dataclass
-from lessons.lesson_8.main_lesson_8 import MeansOfTransport
+from lessons.lesson_8.MeansOfTransport import MeansOfTransport
 
 
 @dataclass
 class Airplane(MeansOfTransport):
-    limiting_height: int # Предельная высота
+    limiting_height: int = 0 # Предельная высота
 
     def make_sound(self):
         pass

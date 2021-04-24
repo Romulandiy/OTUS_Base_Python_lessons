@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from lessons.lesson_8.main_lesson_8 import MeansOfTransport
+from lessons.lesson_8.MeansOfTransport import MeansOfTransport
 
 
 @dataclass
@@ -9,5 +9,5 @@ class Car(MeansOfTransport):
     def make_sound(self):
         pass
 
-    def go(self):
+    def go(self, instance):
         pass

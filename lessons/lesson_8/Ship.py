@@ -1,10 +1,10 @@
 from dataclasses import dataclass
-from lessons.lesson_8.main_lesson_8 import MeansOfTransport
+from lessons.lesson_8.MeansOfTransport import MeansOfTransport
 
 
 @dataclass
 class Ship(MeansOfTransport):
-    displacement: int # Водоизмещение
+    displacement: int = 0 # Водоизмещение
 
     def make_sound(self):
         pass

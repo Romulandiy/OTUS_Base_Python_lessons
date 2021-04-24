@@ -1,30 +1,28 @@
 from dataclasses import dataclass
 from pprint import pprint
-
 from lessons.lesson_8.Car import Car
+from lessons.lesson_8.Engine import Engine
 from lessons.lesson_8.MyException import MyException
-from attr import attrs, attrib, attr
-
-validator_status_motor = attr.validators.in_(["running", "stop"])
 
 
-@attrs
-# @dataclass
+@dataclass
 class PassengerCar(Car):
-    color = str # Цвет автомобиля
-    body_type = str # Тип кузова
-    fuel_tank_volume = int # Объем топливного бака
-    fuel_remaining_in_tank = int # Количество оставшегося топлива в баке
-    status_motor = attrib(default=None, validator=attr.validators(validator_status_motor))
+    fuel_tank_volume: int = 0  # Объем топливного бака
+    fuel_remaining_in_tank: int = 0  # Количество оставшегося топлива в баке
+    color: str = ""  # Цвет автомобиля
+    body_type: str = ""  # Тип кузова
 
     def make_sound(self):
-        pprint("Biiiipppp...!")
+        print("Biiiipppp...!", "\n")
 
-    def go(self):
-        pass
+    def go(self, instance):
+        instance.power_engine()
 
-    def start_motor(self, fuel_tank, remaining_fuel_in_tank):
+    @staticmethod
+    def start_motor(fuel_tank, remaining_fuel_in_tank):
         if remaining_fuel_in_tank / fuel_tank <= 0.04:
-            raise MyException("Not enough fuel in tank")
+            raise MyException.output(fuel_tank, remaining_fuel_in_tank)
         else:
-            return self.status_motor[0]
+            pprint(f"remaining_fuel_in_tank / fuel_tank = {remaining_fuel_in_tank}/{fuel_tank} ="
+                   f" {remaining_fuel_in_tank / fuel_tank}")
+            print("motor is RUNNING", "\n")
