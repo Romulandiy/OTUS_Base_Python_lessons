@@ -9,5 +9,5 @@ class Ship(MeansOfTransport):
     def make_sound(self):
         pass
 
-    def go(self):
+    def go(self, instance):
         pass

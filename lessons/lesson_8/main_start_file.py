@@ -1,7 +1,7 @@
+from lessons.lesson_8.CivilAirplane import CivilAirplane
 from lessons.lesson_8.Engine import Engine
 from lessons.lesson_8.PassengerCar import PassengerCar
-from lessons.lesson_8.Sailboat import Sailboat
-
+from lessons.lesson_8.Motorboat import Motorboat
 
 # Example # 1 ----------------------------------------
 car_example_1 = PassengerCar(weight=1300,
@@ -28,9 +28,17 @@ engine_2 = Engine(maximum_engine_speed=5500,
 
 
 # Example # 3 ----------------------------------------
-sailboat_example_3 = Sailboat(carrying_capacity=3200, weight=7300, sail_area=690, mast_height=10, displacement=23500)
+motorboat_example_3 = Motorboat(carrying_capacity=3200, weight=7300, sail_area=690, mast_height=10, displacement=23500)
 
+engine_3 = Engine(maximum_engine_speed=5500,
+                  number_of_pistons=6,
+                  liter=6.2)
 
+# Example # 4 ----------------------------------------
+civilairplane_example_4 = CivilAirplane(weight=181100, carrying_capacity=397000, passenger_capacity=853)
+engine_4 = Engine(type_motor='turbojet engine', count_turbojet_engine=4)
+
+civilairplane_example_4_2 = CivilAirplane(weight=181100, carrying_capacity=397000)
 
 
 if __name__ == '__main__':
@@ -58,4 +66,17 @@ if __name__ == '__main__':
     Methods of classes Sailboat, Engine and MyException
     '''
     print('-------Example # 3--------')
-    sailboat_example_3.make_sound()
+    motorboat_example_3.count_of_passengers()
+    motorboat_example_3.make_sound()
+    motorboat_example_3.go(engine_3)
+
+
+    '''
+    Example # 4 
+    Methods of classes Airplane, Engine and MyException
+    '''
+    print('-------Example # 4--------')
+    civilairplane_example_4.make_sound()
+    civilairplane_example_4.go(engine_4)
+
+    civilairplane_example_4_2.go(engine_4)
